@@ -108,3 +108,11 @@ app.post('/api/movies', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 }) 
+
+app.delete('/api/movies/:id', (req,res) => {
+    console.log("Delete Movie: " + req.params.id)
+
+    movieModel.findByIdAndDelete(req.params.id, (err,data) => {
+        res.send(data);
+    })
+})
