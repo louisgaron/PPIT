@@ -90,6 +90,16 @@ app.get('/api/movies/:id', (req,res) => {
     })
 })
 
+app.put('/api/movies', (req,res) => {
+    console.log("Update movie: " + req.params.id)
+    console.log(req.body)
+
+    movieModel.findByIdAndUpdate(req.param.id, req.body, {new:true},
+        (error,data) => {
+            res.send(data)
+        })
+})
+
 app.post('/api/movies', (req, res) => {
     console.log('Movie Recieved!')
     console.log(req.body.title)
