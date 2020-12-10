@@ -14,13 +14,13 @@ export class MovieItem extends React.Component {
         this.DeleteMovie = this.DeleteMovie.bind(this);
     }
 
-    DeleteMovie(){
+    DeleteMovie(e){
         e.preventDefault();
         console.log("Delete: " + this.props.movie._id);
 
         axios.delete("http://localhost:4000/api/movies/" + this.props.movie._id)
         .then(() => {
-            this.props.reloadData();
+            this.props.ReloadData();
         })
         .catch();
     }

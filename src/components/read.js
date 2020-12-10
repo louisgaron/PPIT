@@ -42,7 +42,7 @@ export class Read extends React.Component {
         return (
             <div>
                 <h1>This is the read Component</h1>
-                <Movies movies={this.state.movies}></Movies>
+                <Movies movies={this.state.movies} ReloadData={this.ReloadData}></Movies>
             </div>
         );
     }
